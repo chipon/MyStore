@@ -1,0 +1,299 @@
+本次修改部分：
+一、生成订单
+GET /MyStore/AddOrderServlet
+to{
+	money(double)#购买金额
+	address(string)#用户地址
+	message(string)#用户备注
+}
+
+二、查找商品
+GET /MyStore/SerchProdServlet
+to{
+	search(string)#查找信息
+}
+return{
+	Count(int)#找到商品个数
+	ResultList[
+		{
+			prodid(int)#商品ID
+			name(string)#商品名称
+			imgurl(string)#图片路径
+			price(double)#价格
+		},
+		...
+	]
+}
+
+三、查看最近购买商品
+GET /MyStore/ShowProdServlet
+return{
+	Count(int)#商品个数
+	ResultList[#商品列表
+		{
+			prodid#商品ID
+			time(date)#购买时间
+			name(string)#商品名
+			buynum(int)#购买数量
+			price(double)#商品价格
+		},
+		...
+	]
+}
+
+四、获取最近订单
+GET /MyStore/ShowOrderServlet
+return{
+resultlist
+	orderid(string)#订单号
+	time(Timestamp)#订单时间
+	address(string)#地址
+	money(double)#地址
+	paystate(bool)#支付状态,0未支付，1支付
+}
+
+五、更新购物车
+GET /MyStore/UpdateCartServlet
+to{
+	prodid(int)#商品ID
+	buynum(int)#购买数量
+}
+
+1.主页显示推荐商品
+GET /MyStore/RecProdServlet
+return{
+	Count(int)#推荐商品个数
+	ResultList[
+		{
+			prodid(int)#商品ID
+			name(string)#商品名称
+			imgurl(string)#图片路径
+			price(double)#价格
+		},
+		...
+	]
+}
+
+2.主页获取商品种类
+GET /MyStore/ProdTypeServlet
+return{
+	Count(int)#种类个数
+	ResultList[
+		{
+			typeid(int)#商品种类ID
+			typename(string)#商品种类名
+		},
+		...
+	]
+}
+
+3.主页根据种类查看商品
+GET /MyStore/SortProdServlet
+to{
+	typeid(int)#商品种类
+}
+return{
+	Count(int)#商品个数
+	typename(string)#种类名称
+	ResultList[
+		{
+			prodid(int)#商品ID
+			name(string)#商品名称
+			imgurl(string)#图片路径
+			price(double)#价格
+		},
+		...
+	]
+}
+
+4.主页查看所有商品（点击商品按钮）
+GET /MyStore/ProdListServlet
+return{
+	TypeCount(int)#商品种类数
+	TypeList[
+		{
+			typename(string)#商品种类名
+			Count(int)#商品个数
+			ResultList[
+				{
+					prodid(int)#商品ID
+					name(string)#商品名称
+					imgurl(string)#图片路径
+					price(double)#价格
+				},
+				...
+			]
+		},
+		...
+	]
+}
+
+5.查看商品详情
+GET /MyStore/ProdInfoServlet
+to{
+	prodid(int)#商品ID
+}
+return{
+	prodid(int)#商品ID
+	name(string)#商品名
+	price(double)#商品价格
+	imgurl(string)#图片路径
+	stoke(int)#商品存量
+	param(string)#商品参数
+	intruduction(string)#商品简介
+	description(string)#商品详情
+}
+
+6.获取购物车商品个数
+GET /MyStore/CartNumServlet
+return{
+	count(int)#购物车商品个数
+}
+
+7.添加购物车
+GET /MyStore/AddCartServlet
+to{
+	prodid(int)#商品ID
+	buynum(int)#商品数量
+}
+return{
+	count(int)#购物车商品个数
+}
+
+8.移除购物车商品
+POST /MyStore/RemoveCartServlet
+to{
+	prodid(int)#商品ID
+}
+return{
+	count(int)#购物车商品个数
+}
+
+9.购物车商品购买量+1
+GET /MyStore/IncCartServlet
+to{
+	prodid(int)#商品ID
+}
+return{
+	isok(bool)#增加操作是否有效
+}
+
+10.购物车商品购买量-1
+GET /MyStore/DecCartServlet
+to{
+	prodid(int)#商品ID
+}
+return{
+	isok(bool)#减少操作是否有效
+}
+
+11.查看购物车
+GET /MyStore/ShowCartServlet
+return{
+	Count(int)#购物车商品数
+	ResultList[
+		{
+			prodid#商品ID
+			name(string)#商品名
+			stoke(int)#商品存量
+			buynum(int)#购买数量
+			price(double)#商品价格
+		},
+		...
+	]
+}
+
+12.用户注册
+GET /MyStore/RegisterServlet
+to{
+	nickname(string)#用户昵称
+	password(string)#32位MD5加密码
+	telephone(string)#联系电话
+	email(string)#邮箱
+	address(string)#地址
+}
+return{
+	nickname(string)#用户昵称
+}
+
+13.用户登陆
+GET /MyStore/LoginServlet
+to{
+	nickname(string)#用户昵称
+	password(string)#32位MD5加密码
+}
+return{
+	nickname(string)#用户昵称
+	role(bool)#角色(管理员或用户)
+);
+
+14.用户注销
+GET /MyStore/LogoutServlet
+return{
+}
+
+15.获取用户登陆状态
+GET /MyStore/UserStateServlet
+return{
+	islogin(bool)#用户是否登陆
+	nickname(string)#用户昵称(未登陆时不返回此字段）
+}
+
+16.获取用户详细信息
+GET /MyStore/ShowUserServlet
+return{
+	nickname(string)#用户昵称
+	email(string)#邮箱
+	address(string)#地址
+	telephone(string)#电话
+	role(bool)#角色(管理员或用户)
+}
+	
+17.生成订单
+GET /MyStore/AddOrderServlet
+to{
+	money(double)#购买金额
+	address(string)#用户地址
+	message(string)#用户备注
+}
+
+18.查看最近购买商品
+GET /MyStore/ShowProdServlet
+return{
+	Count(int)#商品个数
+	ResultList[#商品列表
+		{
+			prodid#商品ID
+			time(date)#购买时间
+			name(string)#商品名
+			buynum(int)#购买数量
+			price(double)#商品价格
+		},
+		...
+	]
+}
+
+19.添加商品
+POST /MyStore/AddProdServlet
+to{
+	name(string)#商品名
+	price(double)#商品价格
+	imgurl(file)#图片数据
+	stoke(int)#商品存量
+	typeid(int)#商品种类
+	param(string)#商品参数
+	intruduction(string)#商品简介
+	description(string)#商品详情
+}
+
+说明：
+如果ajax返回error，说明服务器出现了错误，
+如所给的参数格式不正确或者处理数据时发生错误
+只有添加商品使用POST方法提交，其余都是GET
+
+待实现的页面:
+1.添加商品页面
+
+待实现的功能：
+1.用户注销
+2.购物车页面：购物车中的商品最好应该设置到商品详情的超链接

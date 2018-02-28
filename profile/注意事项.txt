@@ -1,0 +1,88 @@
+<script type="text/javascript" src="js/jquery-1.7.js"></script>
+<script type='text/javascript' src="js/jquery-ui.js"></script>
+    //获取购物车数量
+    function GetCnum(proid){
+      $.ajax({
+            url: "/MyStore/CartNumServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            },
+            success: function(data,status,xhr) {   
+           		$("#cnum").text(data.Count);
+            },
+            error: function(data) {
+                console.log(JSON.parse(data.responseText).Error);
+                alert(JSON.parse(data.responseText).Error)
+            }
+        });
+    };
+    
+    <script type="text/javascript">
+	function testGetPrice(){
+      $.ajax({
+            url: "",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+              Type:0,
+         //发送的数据 设置为商品id 
+            },
+            success: function(data,status,xhr) {         
+
+                $("#test").attr('src',"images/image2.jpg");
+            },
+            error: function(data) {
+                console.log(JSON.parse(data.responseText).Error);
+                alert(JSON.parse(data.responseText).Error)
+            }
+        });
+    }
+  /*  testGetPrice();*/
+  
+    	//获取购物车数量
+    function GetCnum(){
+      $.ajax({
+            url: "/MyStore/ShowCartServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            },
+            success: function(data,status,xhr) {   
+           		$("#cnum").text(data.Count);
+            },
+            error: function(data) {
+                console.log(JSON.parse(data.responseText).Error);
+                alert(JSON.parse(data.responseText).Error)
+            }
+        });
+    };
+8.更新购物车购买数量（避免购买数量超过商品存量）
+GET /MyStore/CheckCartServlet
+to{
+	prodid#商品ID
+	buynum#购买数量
+}
+return{
+	
+}
+
+订单查询 /OrderListServlet GET
+paramter:
+Orders(
+	userid int,	//用户号
+);
+return:
+Orders(
+	productid int,	//商品号
+	amount int,	//购买数量
+	money double,	//购买金额
+	paystate bit,	//支付状态：0为未支付，1为已支付
+	message string	//用户自定义信息
+);
+
+订单删除 /DelOrderServlet GET
+paramter:
+Orders(
+	orderid long	//订单号
+);

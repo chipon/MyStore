@@ -1,0 +1,103 @@
+create database WebStore;
+------------------------------------------------------
+create table User(
+userid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nickname VARCHAR(20) NOT NULL,
+password CHAR(32) NOT NULL,
+email VARCHAR(40) NOT NULL,
+address VARCHAR(60) NOT NULL,
+role BIT DEFAULT '0' NOT NULL
+);
+insert into User(nickname,password,email,role) values('Daniel','c24db51f7c92472d6e5f6e8d5b174b51','danning_qiu@163.com',1);
+--------------------------------------------------------------------------------------------------------------------------
+create table ProductType(
+typeid TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+typename VARCHAR(20) NOT NULL
+);
+1	insert into ProductType(typename) values('服装');
+2	insert into ProductType(typename) values('图书');
+3	insert into ProductType(typename) values('家用电器');
+4	insert into ProductType(typename) values('多肉植物');
+5	insert into ProductType(typename) values('数码产品');
+-------------------------------------------------------------------------------------
+create table OrderItem(
+	orderid VARCHAR(50) NOT NULL,
+	productid INT NOT NULL,
+	number INT NOT NULL,
+	PRIMARY KEY(orderid,productid),
+	FOREIGN KEY(orderid) REFERENCES Orders(orderid),
+	FOREIGN KEY(productid) REFERENCES Product(productid)
+);
+
+typename VARCHAR(20) NOT NULL
+);
+1	insert into ProductType(typename) values('正品图书');
+2	insert into ProductType(typename) values('宿舍神器');
+3	insert into ProductType(typename) values('多肉植物');
+4	insert into ProductType(typename) values('可爱宠物');
+5	insert into ProductType(typename) values('数码产品');
+-------------------------------------------------------------------------------------
+create table Orders(
+orderid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+time TIMESTAMP NOT NULL,
+userid INT NOT NULL,
+productid INT NOT NULL,
+amount INT DEFAULT '1' NOT NULL,
+money DOUBLE NOT NULL,
+paystate BIT DEFAULT '0' NOT NULL,
+message VARCHAR(40),
+FOREIGN KEY(userid) REFERENCES User(userid),
+FOREIGN KEY(productid) REFERENCES Product(prodid)
+);
+----------------------------------------------------------------------------------------------
+create table Product(
+prodid INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+prodname VARCHAR(60) NOT NULL,
+price DOUBLE NOT NULL,
+imgurl VARCHAR(100) NUT NULL,
+typeid TINYINT NOT NULL,
+stoke INT UNSIGNED NOT NULL,
+description VARCHAR(255),
+FOREIGN KEY(typeid) REFERENCES ProductType(typeid)
+);
+											1	insert into ProductType(typename) values('正品图书');
+											2	insert into ProductType(typename) values('宿舍神器');
+											3	insert into ProductType(typename) values('多肉植物');
+											4	insert into ProductType(typename) values('可爱宠物');
+											5	insert into ProductType(typename) values('数码产品');
+1.
+insert into Product(name,price,typeid,stoke,imgurl,introduction,param,description) values('飞科剃须刀'
+,99.9,2,100,'images/3fdaf4rdgsdgfe.jpg','飞科电动剃须刀男士刮胡刀充电式胡须刀'
+,'产品名称：Flyco/飞科 FS339\n颜色分类: 银黑色\n修发器/修剪器: 有\n充电时间: 1小时'
+,'1小时速充 7级全身水洗 智能操控系统');
+2.
+insert into Product(name,price,typeid,stoke,imgurl,introduction,param,description) values('久量小台灯'
+,49.9,2,200,'images/fjdaklfjdks9.jpg','大学生大容量折叠护眼灯便携式小台灯'
+,'品牌: Duration Power/久量\n系列: 1023\n开关类型: 按钮开关'
+,'久量LED充电宝小台灯两用大学生大容量折叠护眼灯便携式宿舍书桌');
+
+3.
+insert into Product(name,price,typeid,stoke,imgurl,introduction,param,description) values('金士顿U盘'
+,80.9,5,1000,'images/fjdakfjdkjsfgjif.jpg','金士顿32gU盘定制创意加密'
+,'品牌: Kingston/金士顿\n金士顿型号: DTSE9-32GB\n闪存容量: 32GB'
+,'送保护套 送运费险 360认证加密 ');
+
+4.
+insert into Product(name,price,typeid,stoke,imgurl,introduction,param,description) values('大学计算机导论'
+,80.9,5,1000,'images/fjdakfjdkjsfgjif.jpg','金士顿32gU盘定制创意加密'
+,'品牌: Kingston/金士顿\n金士顿型号: DTSE9-32GB\n闪存容量: 32GB'
+,'送保护套 送运费险 360认证加密 ');
+
+2	insert into Product(name,price,typeid,stoke,description) values('iPhone 7 Plus',6000,5,200,'iPhone 7 的出现，让 iPhone 的体验在许多重大方面都有了质的飞跃。它带来了先进的新摄像头系统、更胜以往的性能和电池续航力、富有沉浸感的立体声扬声器、色彩更明亮丰富的 iPhone 显示屏，以及防溅抗水的特性。它周身的每一处，都闪耀着强大科技的光芒。这，就是 iPhone 7');
+3	insert into Product(name,price,typeid,stoke,description) values('');
+4	insert into Product(name,price,typeid,stoke,description) values('大学计算机导论',30,2,1000,'内容充实，深入浅出');
+5	insert into Product(name,price,typeid,stoke,description) values('多肉植物新手套餐',60,4,50,'容易上手，吸甲醛，美观');
+3	insert into Product(name,price,typeid,stoke,description) values('金士顿U盘',99.9,2,100,'灯光可调，更加护眼');
+3	insert into Product(name,price,typeid,stoke,description) values('久量小台灯',99.9,2,100,'灯光可调，更加护眼');
+3	insert into Product(name,price,typeid,stoke,description) values('久量小台灯',99.9,2,100,'灯光可调，更加护眼');
+3	insert into Product(name,price,typeid,stoke,description) values('久量小台灯',99.9,2,100,'灯光可调，更加护眼');
+
+6	insert into Product(name,price,typeid,stoke,description) values('飞科剃须刀',99.9,3,100,'全身水洗，经久耐用');
+-----------------------------------------------------------------------------------------------------------
+
+

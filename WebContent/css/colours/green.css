@@ -1,0 +1,59 @@
+a, a:hover,.topbar-right ul li a:hover, .accordion h4.ui-state-active, .toggle .active, .widget .latest-posts-list li a {
+	color: #18C0F9;
+}
+
+.wrapper, #main-menu-wrapper, #main-menu li.current_page_item a, #main-menu li a:hover, #main-menu li.sfHover a,
+#main-menu a:focus, #main-menu a:hover, #main-menu a:active, #main-menu li ul, blockquote, .page-content table,
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected, #footer {
+	border-color: #18C0F9;
+}
+
+.plus, .minus, .button1, .blog-title .comment-count, .blog-title-single .comment-count, #footer-bottom, .tag-title {
+	background: #18C0F9;
+}
+
+.flex-control-paging li a.flex-active {
+	background: #18C0F9 !important;
+}
+
+#twitter_icon:hover, #facebook_icon:hover, #googleplus_icon:hover, #skype_icon:hover, #flickr_icon:hover, #linkedin_icon:hover, #vimeo_icon:hover, #youtube_icon:hover, #rss_icon:hover {
+	background-color: #18C0F9;
+}
+
+.blog-title .comment-count .comment-point,
+.blog-title-single .comment-count .comment-point {
+	background: url(../../images/comment-point.png) #18C0F9 no-repeat;
+}
+
+.cart-top {
+	background: url(../../images/tagbottom.png) no-repeat bottom center #18C0F9;
+}
+
+.flex-direction-nav .flex-prev, .flex-direction-nav .flex-next {
+	background: url(../../images/slide-arrows.png) #18C0F9 no-repeat;
+}
+
+.flex-direction-nav .flex-prev {
+	background-position: 7px 6px;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: -51px 6px;
+}
+
+.tag-title:before {
+	border-color: #18C0F9 transparent #18C0F9 transparent;
+}
+
+#footer-bottom, #footer-bottom a:hover {
+	color: #def4aa;
+}
+
+.flex-caption p {
+	background: rgba(128, 182, 0, 0.7);
+}
+
+/* Main colour in format for IE, "70FF0000" is the colour #18C0F9, the "70" added to the front gives 70% */
+.ie8 .flex-caption p {
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#70FF0000,endColorstr=#70FF0000);
+}

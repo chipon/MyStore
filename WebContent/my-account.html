@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html dir="ltr" lang="en-US" class="ie6"> <![endif]-->
+<!--[if IE 7]>    <html dir="ltr" lang="en-US" class="ie7"> <![endif]-->
+<!--[if IE 8]>    <html dir="ltr" lang="en-US" class="ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
+
+<!-- BEGIN head -->
+<!-- BEGIN head -->
+<head>
+
+	<!--Meta Tags-->
+	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	
+		
+	<!--Title-->
+	<title>商城：大学生购物</title>
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="css/superfish.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/colours/green.css" type="text/css" media="all" />
+	<link rel="Stylesheet" type="text/css" href="css/loginDialog.css" />
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css' />
+	
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--Favicon-->
+
+	<!--JavaScript-->
+	<script type="text/javascript" src="js/jquery-1.7.js"></script>
+	<script type='text/javascript' src="js/jquery-ui.js"></script>
+	<script type='text/javascript' src='js/jquery.prettyPhoto.js'></script>
+	<script type="text/javascript" src="js/superfish.js"></script>
+	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+	<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>  
+	<!--[if (gte IE 6)&(lte IE 8)]>
+		<script type="text/javascript" src="js/selectivizr-min.js"></script>
+	<![endif]-->
+
+<!-- END head -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<!-- BEGIN body -->
+<body>
+
+    <div id="main">
+	<div class="demo">
+		<nav class="main_nav">
+			<ul>
+				
+			</ul>
+		</nav>
+	</div>
+	<div class="cd-user-modal"> 
+		<div class="cd-user-modal-container">
+			<ul class="cd-switcher">
+				<li  style="list-style-type:none;"><a stlye="text-decoration:none" href="#0">用户登录</a></li>
+				<li  style="list-style-type:none;"><a href="#0">注册新用户</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- 登录表单 -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signin-username">用户名</label>
+						<input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">密码</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="输入密码">
+					</p>
+
+
+
+					<p class="fieldset">
+						<input class="full-width2" type="submit" value="登 录" onclick="javascript:denglu();">
+					</p>
+				</form>
+			</div>
+
+			<div id="cd-signup"> <!-- 注册表单 -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">用户名</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="输入用户名">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">邮箱</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-telephone">电话</label>
+						<input class="full-width has-padding has-border" id="signup-telephone" type="telephone" placeholder="输入电话">
+					</p>	
+					
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">密码</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="输入密码">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-address">地址</label>
+						<input class="full-width has-padding has-border" id="signup-address" type="text" placeholder="输入地址">
+					</p>	
+
+					<p class="fieldset">
+						<input class="full-width2" type="submit" value="注册新用户" onclick="javascript:zhuce();">
+					</p>
+				</form>
+			</div>
+
+			<a href="#0" class="cd-close-form">关闭</a>
+		</div>
+	</div> 
+	
+
+</div>
+
+
+	<!-- BEGIN .wrapper -->
+	<div class="wrapper">
+		
+		<!-- BEGIN .topbar -->
+		<div class="topbar clearfix">
+			
+			<!-- BEGIN .social-icons -->
+<!-- 			<ul class="social-icons">
+	<li><a href="#"><span id="twitter_icon"></span></a></li>
+	<li><a href="#"><span id="facebook_icon"></span></a></li>
+	<li><a href="#"><span id="googleplus_icon"></span></a></li>
+	<li><a href="#"><span id="skype_icon"></span></a></li>
+	<li><a href="#"><span id="flickr_icon"></span></a></li>
+	<li><a href="#"><span id="linkedin_icon"></span></a></li>
+	<li><a href="#"><span id="vimeo_icon"></span></a></li>
+	<li><a href="#"><span id="youtube_icon"></span></a></li>
+	<li><a href="#"><span id="rss_icon"></span></a></li>
+END .social-icons
+</ul> -->
+			
+			<!-- BEGIN .topbar-right -->
+			<div class="topbar-right clearfix">
+				
+				<ul class="clearfix">
+					
+					<li>
+						<div class="demo">
+						<nav class="main_nav">
+							<ul id="panduan">
+								<li class="checkout-icon"><a href="checkout.html">确认订单</a></li>
+
+							</ul>
+						</nav>
+						</div>
+					</li>
+				</ul>
+		
+				<div class="cart-top">
+					<p><a href="cart.html"><span id="cnum"></span>件商品</a></p>
+				</div>
+				
+			<!-- END .topbar-right -->
+			</div>
+		
+		<!-- END .topbar -->
+		</div>
+		
+		<!-- BEGIN #site-title -->
+		<div id="site-title">
+			<a href="index.html">
+				<h1>大学生购物 <span>商城</span></h1>
+			</a>
+		<!-- END #site-title -->
+		</div>
+		
+		<!-- BEGIN .main-menu-wrapper -->
+		<div id="main-menu-wrapper" class="clearfix">
+			
+			<ul id="main-menu" class="fl">
+				<li class="current_page_item"><a href="index.html">主页</a></li>
+				<li><a href="products.html?type=null">商品</a>
+					<ul id="fenlei">
+					
+					</ul>
+				</li>
+				<li><a href="testimonials.html">评价</a></li>
+<!-- 				<li><a href="typography.html">About</a>
+	<ul>
+		<li><a href="typography.html">Typography</a></li>
+		<li><a href="js-elements.html">JS Elements</a></li>
+	</ul>
+</li> -->
+				<li><a href="contact.html">联系我们</a></li>	
+			</ul>
+			
+			<form method="get" action="#" id="menu-search" class="fr" />
+				<input type="text" name="s" />
+			</form>
+		<!-- END .main-menu-wrapper -->	
+		</div>
+		
+		<div id="page-header">
+			<img src="images/page-header1.jpg" alt="" />
+		</div>
+		
+		<!-- BEGIN .section -->
+		<div class="section page-content clearfix">
+	
+			<h2 class="page-title">我的账户</h2>
+
+			<p>你好，<a id="yonghuming"></a>欢迎使用您的帐户区域，您可以查看最近的订单，修改您的结算明细和交货地址。如果您想退回产品，请参阅我们的退货页面，然后<a href="contact.html">与我们联系</a></p>
+				
+			<div class="tag-title-wrap clearfix">
+				<h4 class="tag-title">最近订单</h4>
+			</div>
+					
+			<table width="100%" class="account-table">
+				<thead>
+					<tr>
+						<th>商品号</th>
+						<th>日期</th>
+						<th>送至</th>
+						<th>共</th>
+						<th>状态</th>
+					</tr>
+				</thead>
+				<tbody id="dingdan">
+<!-- 					<tr>
+						<td data-title="Product #">0123</td>
+						<td data-title="Date">2012/08/25</td>
+						<td data-title="Deliver To">山东省淄博市临淄区啦啦啦啦</td>
+						<td data-title="Total">￥25</td>
+						<td data-title="Status">待处理 </td>
+					</tr>
+					<tr>
+						<td data-title="Product #">0123</td>
+						<td data-title="Date">2012/08/25</td>
+						<td data-title="Deliver To">山东省淄博市临淄区啦啦啦啦</td>
+						<td data-title="Total">￥25</td>
+						<td data-title="Status">待处理 </td>
+					</tr>
+					<tr>
+						<td data-title="Product #">0123</td>
+						<td data-title="Date">2012/08/25</td>
+						<td data-title="Deliver To">山东省淄博市临淄区啦啦啦啦</td>
+						<td data-title="Total">￥25</td>
+						<td data-title="Status">待处理 </td>
+					</tr>
+					<tr>
+						<td data-title="Product #">0123</td>
+						<td data-title="Date">2012/08/25</td>
+						<td data-title="Deliver To">山东省淄博市临淄区啦啦啦啦</td>
+						<td data-title="Total">￥25</td>
+						<td data-title="Status">待处理 </td>
+					</tr> -->
+				</tbody>
+			</table>
+				
+			<div class="tag-title-wrap clearfix">
+				<h4 class="tag-title">我的地址</h4>
+			</div>
+			
+			<p>存储在此处的地址将自动应用于所有订单的默认地址，除非在结帐页面上提供了替代方案</p>
+			
+			<ul class="columns-2 clearfix">
+				
+
+				<li class="col2">
+					
+					<div class="tag-title-wrap clearfix">
+						<h4 class="tag-title">运送地址</h4>
+					</div>
+					
+					<p id="motherfucker">
+					</p>
+					
+				</li>
+			</ul>
+			
+		<!-- END .section -->
+		</div>
+
+		<div id="footer-bottom" class="clearfix">
+			
+			<div class="fl">
+				
+				<ul>
+					<li><a href="index.html">主页</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+					<li><a href="products.html">商品</a></li>
+				</ul>
+				
+				<p>&copy; Copyright 2017</p>
+				
+			</div>
+			
+
+			
+		</div>
+			
+	<!-- END .wrapper -->
+	</div>
+	
+<!-- END body -->
+</body>
+
+
+<script type="text/javascript">
+	//获取购物车数量
+    function GetCnum(){
+        $.ajax({
+              url: "/MyStore/CartNumServlet",
+              type: 'GET',
+              dataType: 'json',
+              data: {
+              },
+              success: function(data,status,xhr) {   
+             		$("#cnum").text(data.count);
+              },
+              error: function(data) {
+                  console.log(JSON.parse(data.responseText).Error);
+                  alert(JSON.parse(data.responseText).Error)
+              }
+          });
+      };
+      
+    //加入购物车
+	
+    //注册与登录
+    //注册
+    function zhuce(proid){
+      $.ajax({
+            url: "/MyStore/RegisterServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            	nickname:$("#signup-username").val(),
+				password:md5($("#signup-password").val()),
+				telephone:$("#signup-telephone").val(),
+				email:$("#signup-email").val(),
+				address:$("#signup-address").val()
+            },
+            success: function(data,status,xhr) {   
+           		alert("注册成功")
+            },
+            error: function(data) {
+            	alert("注册失败");
+            	window.location.href = "#";
+            }
+        });
+    };
+    //登录
+    function denglu(proid){
+      $.ajax({
+            url: "/MyStore/LoginServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            	nickname:$("#signin-username").val(),
+		password:md5($("#signin-password").val())
+            },
+            success: function(data,status,xhr) {   
+           		alert("登录成功");
+           	 	location.reload();
+            },
+            error: function(data) {
+            	alert("登录失败");
+            	window.location.href = "#";
+            }
+        });
+    };
+	//检测是否登录
+    function nick(){
+      $.ajax({
+            url: "/MyStore/UserStateServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            	
+            },
+            success: function(data,status,xhr) { 
+                if(data.islogin){
+                	$("#panduan").append("<li class='myaccount-icon'><a href='my-account.html'   >"+data.nickname+"&nbsp;&nbsp;</a><a href='javascript:zhuxiao()'=''>注销</a></li>")
+                    	
+					
+			
+           		}else{
+           			$("#panduan").append("<li class='myaccount-icon'><a href='#' class='cd-signin'  >登录</a></li>")
+           		} 
+            },
+            error: function(data) {
+            	alert("登录失败");
+            	window.location.href = "#";
+            }
+        });
+    }; 	
+    //获取商品分类
+    function GetType(){
+      $.ajax({
+            url: "/MyStore/ProdTypeServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            	
+            },
+            success: function(data,status,xhr) {
+            	var i=0; 
+            	for(i=0;i<data.Count;i++){
+           			$("#fenlei").append("<li><a href='products.html?type="+data.ResultList[i].typeid+"'>"+data.ResultList[i].typename+"</a></li>")
+            	}
+
+
+            },
+            error: function(data) {
+            	
+            }
+        });
+    }; 
+    //获取用户信息
+    function dingdan(){
+      $.ajax({
+            url: "/MyStore/ShowUserServlet",
+            type: 'GET',
+            dataType: 'json',
+            data: {
+            	
+            },
+            success: function(data,status,xhr) {
+            	$("#yonghuming").text(data.nickname+"，");
+				$("#motherfucker").text(data.address);
+            },
+            error: function(data) {
+            	
+            }
+        });
+    }; 
+
+    //获取订单信息
+    var sum1;
+    function dingdaninfo(){
+        $.ajax({
+              url: "/MyStore/ShowOrderServlet",
+              type: 'GET',
+              dataType: 'json',
+              data: {
+              	
+              },
+              success: function(data,status,xhr) {
+              	var i=0; 
+              	var sum=0;
+              	
+              	for(i=0;i<data.Count;i++){
+              		if(data.ResultList[i].paystate){
+              			var a="已经支付"
+              		}else{
+              			var a="未支付"
+              		}
+            		$("#dingdan").append("<tr><td data-title='Product #'>"+data.ResultList[i].orderid+"</td><td data-title='Product Name'>"+data.ResultList[i].time+"</td><td data-title='Qty' >"+data.ResultList[i].address+"</td><td data-title='Unit Pirce'>￥"+data.ResultList[i].money+"</td><td data-title='Total Pirce'>"+a+"</td></tr>")
+             		
+              	}
+
+              },
+              error: function(data) {
+              	
+              }
+          });
+      }; 	
+      //提交订单
+      //支付
+    function zhuxiao(){
+    	      $.ajax({
+    	            url: "/MyStore/LogoutServlet",
+    	            type: 'GET',
+    	            dataType: 'json',
+    	            data: {
+    	            },
+    	            success: function(data,status,xhr) {
+    	            	alert("注销成功")
+    	            	location.reload();
+    	            },
+    	            error: function(data) {
+    	            	
+    	            }
+    	        });
+    	    }; 
+    GetCnum();
+    nick();
+    GetType();
+    dingdan()
+    dingdaninfo()
+</script>
+</html>

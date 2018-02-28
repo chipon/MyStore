@@ -1,0 +1,66 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  	<script type="text/javascript">
+  		function checkData(){
+  			var price = document.getElementsByName("price")[0].value;
+  			if(isNaN(price)){
+  				alert("单价必须是数字!");
+  				document.getElementsByName("price")[0].value = "";
+  				return false;
+  			}else if(price<=0){
+	  			alert("单价必须大于0!")
+	  			document.getElementsByName("price")[0].value = "";
+	  			return false;
+  			}else{
+  				return true;
+  			}
+  		}
+  	</script>
+  </head>
+  <body style="text-align: center;">
+  	<h1>购物后台添加商品</h1><hr>
+  	<form action="/MyStore/AddProdServlet" method="POST" enctype="multipart/form-data" onsubmit="return checkData()">
+  		<table border="1">
+  			<tr>
+  				<td>商品名称</td>
+  				<td><input type="text" name="name"/></td>
+  			</tr>
+  			<tr>
+  				<td>单价</td>
+  				<td><input type="text" name="price"/></td>
+  			</tr>
+  			<tr>
+  				<td>商品种类</td>
+  				
+					<td><input type="text" name="typeid"/></td>
+				  
+  			</tr>
+  			<tr>
+  				<td>库存数量</td>
+  				<td><input type="text" name="stoke"/></td>
+  			</tr>
+  			<tr>
+  				<td>商品图片</td>
+  				<td><input type="file" name="imgurl"/></td>
+  			</tr>
+  			<tr>
+  				<td>商品参数</td>
+  				<td><textarea name="param" rows="6" cols="40"></textarea></td>
+  			</tr>
+        <tr>
+          <td>商品简介</td>
+          <td><textarea name="intruduction" rows="6" cols="40"></textarea></td>
+        </tr>
+        <tr>
+          <td>商品详情</td>
+          <td><textarea name="description" rows="6" cols="40"></textarea></td>
+        </tr>
+  			<tr>
+  				<td colspan="2"><input type="submit" value="添加商品"></td>
+  			</tr>
+  		</table>
+  	</form>
+  </body>
+</html>
